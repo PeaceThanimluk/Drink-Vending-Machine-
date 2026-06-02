@@ -13,11 +13,33 @@
 
     /*Colors*/
     --white: #ffffff;
+    --black: rgba(0, 0, 0, 0.621);
 
     --header-text:#fcaf43;
     --machine-bg: var(--white);
     --product-bg: #dbd8e3;
     --info-bg: #272343;
+    --label-text: #86b499;
+    --button-bg: #4c986b;
+    --button-hover: #1d733f;
+
+    --money-label-bg: #e9c687;
+    --money-display-text: var(--black);
+    --money-btn-hover: #e0aa45;
+
+    --span: #005689;
+    --text-color: #2b4353;
+
+    /* Spacing scale */
+    --space-1:  0.25rem;
+    --space-2:  0.5rem;
+    --space-3:  0.75rem;
+    --space-4:  1rem;
+    --space-6:  1.5rem;
+    --space-8:  2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-24: 6rem;
 
     /*Layout*/
     --container-max: 480px;
@@ -76,6 +98,28 @@ body {
     margin-top: 2rem;
 }
 
+.Guide {
+    width: 100%;
+    max-width: 100%;
+    font-family: var(--font-thai);
+    text-align: center;
+    font-weight: 600;
+}
+
+.Guide .header-span {
+    color: var(--span);
+    font-size: 2rem;
+}
+
+.Guide .credit {
+    color: var(--span);
+    font-size: 1.2rem;
+}
+
+.Guide p {
+    color: var(--text-color);
+}
+
 /* ===========================================================
    MACHINE
    ===========================================================*/
@@ -89,7 +133,7 @@ body {
 .product-container {
     margin: 1rem 1rem;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 
@@ -121,12 +165,268 @@ body {
 }
 
 .product .info-box {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin: var(--space-4) 0;
+}
+
+.product-num {
+    font-family: var(--font-heading);
+    color: var(--white);
     background-color: var(--info-bg);
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+.product-name {
+    font-family: var(--font-thai);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.product-price {
+    font-family: var(--font-thai);
+    font-size: 1.8rem;
+}
+
+/*Control Panel*/
+
+.control {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.keypad-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+
+}
+
+.input-label {
+    background-color: var(--label-text);
     color: var(--white);
     text-align: center;
-    width: 3rem;
-    margin-top: 0.5rem;
-    border-radius: 20px;
+    font-family: var(--font-thai);
+    font-weight: 400;
+    font-size: 2rem;
+    width: fit-content;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: var(--img-radius);
+}
+
+.display-box {
+    background-color: var(--label-text);
+    margin: 20px 0;
+    width: 9rem;
+    height: 5rem;
+    border-radius: var(--img-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-text {
+    color: var(--white);
+    text-align: center;
     font-family: var(--font-heading);
     font-weight: 400;
+    font-size: 4rem;
 }
+
+.keypad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2.5rem;
+
+}
+
+.key-btn {
+    background-color: var(--button-bg);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 2rem;
+    border-style: none;
+    border-radius: 15px;
+    padding: 1.5rem;
+    
+}
+
+.key-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.key-btn:active {
+    background-color: var(--white);
+}
+
+@media (max-width: 280px){
+    .keypad-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.buy-btn {
+    margin: 3rem 0;
+    background-color: var(--label-text);
+    color: var(--white);
+    border-style: none;
+    font-family: var(--font-thai);
+    font-size: 3rem;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.buy-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.buy-btn:active {
+    background-color: var(--white);
+}
+
+/* ===========================================================
+   MONEY-CONTAINER
+   ===========================================================*/
+
+.money-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.money-label {
+    color: var(--white);
+    background-color: var(--money-label-bg);
+    font-family: var(--font-thai);
+    font-size: var(--space-12);
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+
+.money-display {
+    margin-top: var(--space-8);
+    color: var(--money-display-text);
+    font-family: var(--font-heading);
+    background-color: var(--white);
+    padding: var(--space-16);
+    border-radius: 20px;
+    font-size: 5rem;
+}
+
+.money-btn {
+    margin-top: var(--space-24);
+    border-style: none;
+    background-color: var(--money-label-bg);
+    color: var(--white);
+    font-family: var(--font-thai);
+    font-size: var(--space-12);
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+
+.money-btn:hover {
+    background-color: var(--money-btn-hover);
+}
+
+.money-btn:active {
+    background-color: var(--white);
+}
+
+/* ===========================================================
+   RESPONSIVE DESIGN FOR DESKTOP (WIDTH >= 768PX)
+   ===========================================================*/
+
+   @media (min-width: 768px) {
+
+    .wrapper {
+        grid-template-columns: 1fr 200px;
+        max-width: 1000px;
+        align-items: start;
+        gap: 30px;
+        height: 95vh;
+    }
+
+    .machine {
+        display: flex;
+    }
+
+    .machine .product {
+        padding: 5px 0;
+    }
+
+    .product .image-box {
+        height: 3rem;
+    }
+
+    .product .info-box {
+        gap: 5px;
+    }
+
+    .product-num {
+        padding: 5px 7px;
+    }
+
+    .product-name {
+        font-size: 1rem;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+
+    .input-label {
+        margin-bottom: 10px;
+        font-size: 1rem;
+
+    }
+
+    .display-box {
+        margin-top: 0;
+        margin-bottom: 10px;
+        width: 4rem;
+        height: 2rem;
+    }
+
+    .display-text {
+        font-size: 2rem;
+    }
+
+    .keypad-grid {
+        gap: 0.5rem;
+    }
+
+    .key-btn {
+        font-size: 0.75rem;
+        padding: 1rem;
+    }
+
+    .money-container {
+        margin-top: 2rem;
+    }
+
+    .money-label {
+        font-size: var(--space-8);
+        padding: 10px 25px;
+    }
+
+    .money-display {
+        font-size: var(--space-8);
+        padding: var(--space-12);
+    }
+
+    .money-btn {
+        margin-top: var(--space-12);
+    }
+
+   }
