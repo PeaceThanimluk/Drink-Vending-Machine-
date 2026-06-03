@@ -81,8 +81,8 @@ body {
    ===========================================================*/
 
 .wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
     max-width: 480px;
     width: 100%;
     height: auto;
@@ -350,6 +350,7 @@ body {
    @media (min-width: 768px) {
 
     .wrapper {
+        display: grid;
         grid-template-columns: 1fr 200px;
         max-width: 1000px;
         align-items: start;
