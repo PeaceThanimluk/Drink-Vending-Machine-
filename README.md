@@ -2,6 +2,8 @@
 # Drink-Vending-Machine
 นี่คือ โปรเจคแรกของผม ที่ทำด้วย html css javascript ครับ (ไม่มีvibe code มี ai ช่วยบ้างครับ)
 
+Link -> https://drink-vending-machine.vercel.app/
+
 ## Desktop
 <img width="1338" height="878" alt="710516705_1561375518936270_6123553575176390070_n" src="https://github.com/user-attachments/assets/410504de-8224-4f03-956a-75ca7d37d12b" />
 
